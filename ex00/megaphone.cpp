@@ -6,12 +6,12 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 22:27:33 by dolifero          #+#    #+#             */
-/*   Updated: 2024/08/26 23:10:16 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/08/27 23:40:07 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include <iostream>
+#include <cctype>
 
 int	main(int argc, char **argv)
 {
@@ -20,24 +20,24 @@ int	main(int argc, char **argv)
 	char	temp;
 
 	if (argc == 1)
-		return (write(1, "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n", 40), 0);
-	i = 0;
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return (0);
+	}
+	i = 1;
 	while (argv[i])
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] >= 'a' && argv[i][j] <= 'z')
-			{
-				temp = argv[i][j] - 32;
-				write(1, &temp, 1);
-			}
-			else
-				write(1, &argv[i][j], 1);
+			temp = argv[i][j];
+			if (temp >= 'a' && temp <= 'z')
+				temp = std::toupper(temp);
+			std::cout << temp;
 			j++;
 		}
 		i++;
 	}
-	write (1, "\n", 1);
+	std::cout << std::endl;
 	return (0);
 }
