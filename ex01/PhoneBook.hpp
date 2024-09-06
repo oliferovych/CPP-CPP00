@@ -6,7 +6,7 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 02:38:56 by dolifero          #+#    #+#             */
-/*   Updated: 2024/08/28 02:42:52 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/09/07 01:13:58 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "contact.hpp"
 #include <iostream>
 #include <iomanip>
+#include <limits>
 
 class PhoneBook
 {

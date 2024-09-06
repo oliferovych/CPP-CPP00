@@ -6,7 +6,7 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 02:43:54 by dolifero          #+#    #+#             */
-/*   Updated: 2024/08/28 03:33:54 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/09/07 01:16:41 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,15 @@ void PhoneBook::searchContacts() const
 	int	index;
 	std::cout << "Enter index to view contact details: ";
 	std::cin >> index;
-	std::cin.ignore(100, '\n');
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-	if (index < 1 || index > contactCount)
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		std::cout << "Invalid input! Please enter a number." << std::endl;
+	}
+	else if (index < 1 || index > contactCount)
 		std::cout << "Invalid index!" << std::endl;
 	else
 		displayContact(index - 1);

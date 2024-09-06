@@ -6,7 +6,7 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 03:06:18 by dolifero          #+#    #+#             */
-/*   Updated: 2024/08/28 03:16:35 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/09/07 01:10:52 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	main(void)
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
 
+		for(int i = 0; command[i]; i++)
+			command[i] = std::toupper(command[i]);
 		if (command == "ADD")
 		{
 			PhoneBook.addContact();
