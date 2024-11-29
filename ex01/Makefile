@@ -6,7 +6,7 @@
 #    By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/26 22:27:19 by dolifero          #+#    #+#              #
-#    Updated: 2024/09/07 01:03:13 by dolifero         ###   ########.fr        #
+#    Updated: 2024/11/29 15:07:34 by dolifero         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -fsanitize=address -g -I ./
 RM			= rm -f
 
-SRC_FILES	=	contact.cpp\
+SRC_FILES	=	Contact.cpp\
 				PhoneBook.cpp\
 				main.cpp
 OBJ_FILES	=	${SRC_FILES:.cpp=.o}

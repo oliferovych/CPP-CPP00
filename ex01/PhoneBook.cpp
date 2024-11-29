@@ -6,7 +6,7 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 02:43:54 by dolifero          #+#    #+#             */
-/*   Updated: 2024/09/07 01:16:41 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:12:44 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,40 @@ void	PhoneBook::addContact()
 
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, input);
+	if(!std::cin.good())
+		exit(0);
 	newContact.setFirstName(input);
 
 	std::cout << "Enter last name: ";
 	std::getline(std::cin, input);
+	if(!std::cin.good())
+		exit(0);
 	newContact.setLastName(input);
 
 	std::cout << "Enter nickname: ";
 	std::getline(std::cin, input);
+	if(!std::cin.good())
+		exit(0);
 	newContact.setNickname(input);
 
 	std::cout << "Enter phone number: ";
 	std::getline(std::cin, input);
+	if(!std::cin.good())
+		exit(0);
+	for(int i = 0; input[i]; i++)
+	{
+		if (input[i] < '0' || input[i] > '9' || input[i] != ' ' || input[i] != '+')
+		{
+			std::cout << "Invalid phone number!" << std::endl;
+			return;
+		}
+	}
 	newContact.setPhoneNumber(input);
 
 	std::cout << "Enter darkest secret: ";
 	std::getline(std::cin, input);
+	if(!std::cin.good())
+		exit(0);
 	newContact.setDarkestSecret(input);
 
 	if (contactCount < 8)
@@ -70,6 +88,8 @@ void PhoneBook::searchContacts() const
 	int	index;
 	std::cout << "Enter index to view contact details: ";
 	std::cin >> index;
+	if(!std::cin.good())
+		exit(0);
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
 	if (std::cin.fail())

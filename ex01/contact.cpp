@@ -6,11 +6,11 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 02:32:52 by dolifero          #+#    #+#             */
-/*   Updated: 2024/08/28 02:37:36 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:07:45 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 void Contact::setFirstName(const std::string& firstName)
 {

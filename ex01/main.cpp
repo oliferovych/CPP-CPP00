@@ -6,11 +6,11 @@
 /*   By: dolifero <dolifero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 03:06:18 by dolifero          #+#    #+#             */
-/*   Updated: 2024/09/07 01:10:52 by dolifero         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:08:56 by dolifero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 int	main(void)
@@ -19,7 +19,7 @@ int	main(void)
 	std::string	command;
 
 	std::cout << "Behold the Grand PhoneBook software!" << std::endl;
-	while (1)
+	while (1 && std::cin.good())
 	{
 		std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
 		std::getline(std::cin, command);
@@ -39,6 +39,8 @@ int	main(void)
 			std::cout << "Exiting the program. Goodbye!" << std::endl;
 			break;
 		}
+		else if(std::cin.eof())
+			break;
 		else
 		{
 			std::cout << "Unknown command." << std::endl;
